@@ -1,9 +1,11 @@
+<html>
+<body>
 <?php
 require '/connect.php';
 
 connectdb();
-
-        // $link = connectDB();
+?>
+        <!-- // $link = connectDB();
         // // get data from FORM
         // $idCust = $_POST['id_cust'];
         // $custName = $_POST['name'];
@@ -23,7 +25,10 @@ connectdb();
         //     echo "Records added successfully.";
         // } else {
         //     echo "Records failed." . pg_error($conn);
-        // }
+        // } -->
 
 
-?>
+
+</body>
+</html>
+
