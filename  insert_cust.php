@@ -1,7 +1,7 @@
 <?php
-require_once "connect.php";
-
-$conn = connectdb();
+// require_once "connect.php";
+echo "Database";
+// $conn = connectdb();
 ?>
 
         <!-- // $link = connectDB();
