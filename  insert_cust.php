@@ -1,6 +1,7 @@
 <?php
 require_once 'connect.php';
 
+connectdb();
 
         // $link = connectDB();
         // // get data from FORM
