@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php
     $host = "ec2-54-159-175-113.compute-1.amazonaws.com";
     $db = "d54jga5rdkh2ad";
@@ -36,3 +38,5 @@
     //     }
 
 ?>
+</body>
+</html>
