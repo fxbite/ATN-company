@@ -1,10 +1,6 @@
 <html>
 <body>
-<?php
-require '/connect.php';
 
-connectdb();
-?>
         <!-- // $link = connectDB();
         // // get data from FORM
         // $idCust = $_POST['id_cust'];

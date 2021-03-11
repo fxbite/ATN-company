@@ -1,6 +1,4 @@
 <?php  
-function connectdb()
-{ 
 $host = "ec2-54-159-175-113.compute-1.amazonaws.com";
 $db = "d54jga5rdkh2ad";
 $user = "exggdztndbdebf";
@@ -16,7 +14,6 @@ if (!$con) {
    echo "Database connected.";
 }
 
-}
 ?>  
 
     <!-- // $idCust = $_POST["id_cust"];
