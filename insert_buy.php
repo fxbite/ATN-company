@@ -18,11 +18,11 @@ $sql = "INSERT INTO customer (idCust, nameCust, phone, email) VALUES
 
 echo $sql;
 
-if (pg_query($conn,$sql)){
-    echo "Records added successfully.";
-} else {
-    echo "Records failed.";
-}  
+// if (pg_query($conn,$sql)){
+//     echo "Records added successfully.";
+// } else {
+//     echo "Records failed.";
+// }  
 ?>
 
 
