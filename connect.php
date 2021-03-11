@@ -10,13 +10,15 @@
 
     if (!$conn) {
         echo "Database connection failed.";
+    } else {
+        echo "Database connected."
     }
-    return $conn;
+    
 
-    $idCust = $_POST['id_cust'];
-        $custName = $_POST['name'];
-        $custPhone = $_POST['phone'];
-        $custEmail = $_POST['email'];
+    $idCust = $_POST["id_cust"];
+        $custName = $_POST["name"];
+        $custPhone = $_POST["phone"];
+        $custEmail = $_POST["email"];
 
         echo $idCust; <br>
         echo $custName; <br>
@@ -27,7 +29,7 @@
 
         echo $sql; <br>
 
-        if (pg_query($link,$sql)){
+        if (pg_query($conn,$sql)){
             echo "Records added successfully.";
         } else {
             echo "Records failed." . pg_error($conn);
