@@ -13,9 +13,8 @@ echo $custName;
 echo $custPhone; 
 echo $custEmail;
 
-$sql = 'INSERT INTO public."customer" ("idCust", "nameCust", "phone", "email") VALUES 
-        ('."'$idCust'::integer, '$custName'::character varying, '$custPhone'::character varying, 
-        '$custEmail'::character varying)".' returning "id"';
+$sql = "INSERT INTO customer (idCust, nameCust, phone, email) VALUES 
+        ('$idCust', '$custName', '$custPhone', '$custEmail')";
 
 echo $sql;
 
