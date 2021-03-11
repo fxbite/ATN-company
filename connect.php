@@ -12,23 +12,10 @@ $con = pg_connect("dbname=$db host=$host port=$port user=$user password=$pass ss
 
 if (!$con) {
    echo "Database connection failed.";
-} else {
-   echo "Database connected.";
-}
-   // return $con;
+} 
+return $con;
 
 }
 
-    
-// $sql = "INSERT INTO customer (idCust, nameCust, phone, email) VALUES 
-//         ('$idCust', '$custName', '$custPhone', '$custEmail')";
-
-//     echo $sql; <br>
-
-//     if (pg_query($conn,$sql)){
-//       echo "Records added successfully.";
-//       } else {
-//            echo "Records failed." . pg_error($conn);
-//         }  
 
 ?>
