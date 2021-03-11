@@ -1,5 +1,7 @@
 <?php
 require("./connect.php");
+
+echo "hello";
 ?>
 
         <!-- // $link = connectDB();
