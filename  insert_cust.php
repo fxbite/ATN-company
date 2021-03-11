@@ -1,7 +1,7 @@
 <?php
-// require("./connect.php");
+require_once "connect.php";
 
-echo $_POST["name"];
+$conn = connectdb();
 ?>
 
         <!-- // $link = connectDB();

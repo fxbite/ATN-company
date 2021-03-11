@@ -7,7 +7,7 @@
     <title>Add customers form</title>
 </head>
 <body>
-    <form action=" insert_cust.php" method="POST">
+    <form action="insert_cust.php" method="POST">
         <label>Id Custommer:</label><br>
         <input type="text" name="id_cust"><br>
         <label>Full Name:</label><br>
