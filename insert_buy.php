@@ -13,8 +13,8 @@ echo $custName;
 echo $custPhone; 
 echo $custEmail;
 
-$sql = "INSERT INTO customer (idCust, nameCust, phone, email) VALUES 
-        ('$idCust', '$custName', '$custPhone', '$custEmail')";
+// $sql = "INSERT INTO customer (idCust, nameCust, phone, email) VALUES 
+//         ('$idCust', '$custName', '$custPhone', '$custEmail')";
 
 $query = "INSERT INTO customer VALUES ('$_POST[id_cust]','$_POST[name]',
 '$_POST[phone]','$_POST[email]')";
