@@ -1,10 +1,3 @@
-<html>
-<body>
-
-<div>
-Test: <?php echo $_POST["id_cust"];  ?> <br>
-</div>    
-
 <?php   
 $host = "ec2-54-159-175-113.compute-1.amazonaws.com";
 $db = "d54jga5rdkh2ad";
@@ -43,5 +36,3 @@ if (!$con) {
     //     }  -->
 
 
-</body>
-</html>
