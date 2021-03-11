@@ -12,10 +12,8 @@ $con = pg_connect("dbname=$db host=$host port=$port user=$user password=$pass ss
 
 if (!$con) {
    echo "Database connection failed.";
-} else {
-   echo "successfully";
-}
-// return $con;
+} 
+return $con;
 
 }
 
