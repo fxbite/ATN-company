@@ -19,9 +19,9 @@ echo $custEmail;
 $query = "INSERT INTO customer VALUES ('$_POST[id_cust]','$_POST[name]',
 '$_POST[phone]','$_POST[email]')";
 
-echo $sql;
+echo $query;
 
-if (pg_query($conn,$sql)){
+if (pg_query($conn,$query)){
     echo "Records added successfully.";
 } else {
     echo "Records failed.";
