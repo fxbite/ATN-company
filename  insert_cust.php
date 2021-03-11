@@ -1,5 +1,6 @@
-<html>
-<body>
+<?php
+require("./connect.php");
+?>
 
         <!-- // $link = connectDB();
         // // get data from FORM
@@ -25,6 +26,5 @@
 
 
 
-</body>
-</html>
+
 
