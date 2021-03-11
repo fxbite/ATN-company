@@ -2,7 +2,7 @@
 require_once 'connect.php';
 
 
-       $conn = connectDB();
+        connectDB();
         // get data from FORM
         $idCust = $_POST['id_cust'];
         $custName = $_POST['name'];
