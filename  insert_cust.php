@@ -2,7 +2,7 @@
 require_once 'connect.php';
 
 
-        connectDB();
+        $link = connectDB();
         // get data from FORM
         $idCust = $_POST['id_cust'];
         $custName = $_POST['name'];
@@ -18,7 +18,7 @@ require_once 'connect.php';
 
         echo $sql; <br>
 
-        if (pg_query($conn,$sql)){
+        if (pg_query($link,$sql)){
             echo "Records added successfully.";
         } else {
             echo "Records failed." . pg_error($conn);
