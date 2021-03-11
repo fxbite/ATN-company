@@ -9,13 +9,13 @@
 <body>
     <form action="insert_buy.php" method="POST">
         <label>Id Custommer:</label><br>
-        <input type="text" name="id_cust"><br>
+        <input type="text" name="id_cust" id="id_cust"><br>
         <label>Full Name:</label><br>
-        <input type="text" name="name"><br>
+        <input type="text" name="name" id="name"><br>
         <label>Phone Number:</label><br>
-        <input type="text" name="phone"><br>
+        <input type="text" name="phone" id="phone"><br>
         <label>Email:</label><br>
-        <input type="text" name="email"><br><br>
+        <input type="text" name="email" id="email"><br><br>
         <input type="submit" value="Add info">
     </form> 
 </body>
