@@ -19,7 +19,7 @@
         <label>Price:</label><br>
         <input type="text" name="price"><br><br>
         <label>Description:</label><br>
-        <textarea type="text" name="num" placeholder="Descript here..."></textarea<br><br>
+        <textarea type="text" name="num" placeholder="Descript here..."></textarea><br><br>
         <input type="submit" value="Add info">
     </form> 
     
