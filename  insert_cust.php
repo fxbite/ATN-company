@@ -1,8 +1,8 @@
 <?php
 require_once 'connect.php';
 
-if (isset($_POST['submit'])) {
-    $conn = connectDB();
+
+       $conn = connectDB();
         // get data from FORM
         $idCust = $_POST['id_cust'];
         $custName = $_POST['name'];
@@ -23,6 +23,6 @@ if (isset($_POST['submit'])) {
         } else {
             echo "Records failed." . pg_error($conn);
         }
-}
+
 
 ?>
