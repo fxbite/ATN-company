@@ -45,14 +45,14 @@
 			$conn=connectDB();
             $sql = "select * from product";
 
-            $products= mysqli_query($conn, $sql);
+            $products= pg_query($conn, $sql);
             $i= 9;
             $count = 0;
-            while ($count < $i && $row = mysqli_fetch_array($products)) { 
+            while ($count < $i && $row = pg_fetch_array($products)) { 
             $count++;
 			?>
 			<div class="col-md-3">
-                <form method="post" action="Cart.php?action=add&id=<?php echo $row["idPro"]; ?>">
+                <form method="post" action="products.php?action=add&id=<?php echo $row["idPro"]; ?>">
 
                     <div class="product">
                         <img src="<?php echo $row["image"]; ?>" class="img-responsive">
