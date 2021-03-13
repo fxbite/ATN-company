@@ -1,8 +1,6 @@
 <?php
 require_once "connect.php";
 
-
-if (isset($_POST['submit'])) {
     $conn = connectdb();
 
      // get data from FORM
@@ -15,7 +13,7 @@ if (isset($_POST['submit'])) {
     echo $nameBuy;
     echo $phoneBuy;
     echo $emailBuy;
-}
+
     $sql = "INSERT INTO customer VALUES ('$idBuy',' $nameBuy',
     ' $phoneBuy','$emailBuy')";
 
