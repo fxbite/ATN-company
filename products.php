@@ -41,7 +41,7 @@
 	<div class="container" style="width: 65%">
         <h2>Shopping Cart</h2>
       
-		    // require_once 'connect.php';
+		    <!-- // require_once 'connect.php';
 			// $conn=connectDB();
             // $sql = "select * from product";
 
@@ -49,7 +49,7 @@
             // $i= 9;
             // $count = 0;
             // while ($count < $i && $row = mysqli_fetch_array($products)) { 
-            // $count++;
+            // $count++; -->
 			<div class="col-md-3">
                 <form method="post" action="Cart.php?action=add&id=<?php echo $row["id"]; ?>">
 
