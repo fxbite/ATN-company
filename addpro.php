@@ -14,7 +14,7 @@
 </head>
 <body>
     <form action="insert_pro.php" method="POST" class="container-center">
-        <fieldset>
+        
          <legend>Input info products</legend>
          <label>Id Product:</label><br>
          <input type="text" name="id_pro"><br><br>
@@ -30,7 +30,7 @@
          <textarea type="text" name="num" placeholder="Descript here..." rows="4" cols="50">   
          </textarea><br><br>
          <input type="submit" value="Add info">
-        </fieldset>
+        
     </form> 
 </body>
 </html>
