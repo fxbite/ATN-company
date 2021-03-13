@@ -14,7 +14,7 @@ $descPro = $_POST['desc'];
 //Get Image
 if(isset($_FILES))
 {
-    $target_dir = 'assets/img/data';
+    $target_dir = 'assets/img/data/';
     $target_file = $target_dir.basename($_FILES['name_pro']['name']);
     
     $uploadOk = 1;
@@ -33,19 +33,8 @@ if(isset($_FILES))
     }
 }
 
-echo $idPro;
-echo $namePro;
-echo $imagePro;
-echo $numPro;
-echo $pricePro;
-echo $descPro; 
-
-
-
 $sql = "INSERT INTO product VALUES ('$idPro','$namePro','$imagePro',
 '$numPro','$pricePro','$descPro')";
-
-echo $sql;
 
 if (pg_query($conn,$sql)){
     echo "Records added successfully.";
