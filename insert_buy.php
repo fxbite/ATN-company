@@ -9,11 +9,7 @@ require_once "connect.php";
     $phoneBuy = $_POST['phone'];
     $emailBuy = $_POST['email'];
 
-    echo $idBuy;
-    echo $nameBuy;
-    echo $phoneBuy;
-    echo $emailBuy;
-
+    // insert to databse
     $sql = "INSERT INTO customer VALUES ('$idBuy',' $nameBuy',
     ' $phoneBuy','$emailBuy')";
 

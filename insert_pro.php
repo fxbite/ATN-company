@@ -3,6 +3,14 @@ require_once "connect.php";
 
 $conn = connectdb();
 
+// get data from Form
+$idPro = $_POST['id_pro'];
+$namePro = $_POST['name_pro'];
+$imagePro = $_FILES["image"]["name"];
+$numPro = $_POST['num'];
+$pricePro = $_POST['price'];
+$descPro = $_POST['desc'];
+
 //Get Image
 if(isset($_FILES))
 {
@@ -23,6 +31,15 @@ if(isset($_FILES))
       }
     }
 }
+
+echo $idPro;
+echo $namePro;
+echo $imagePro;
+echo $numPro;
+echo $pricePro;
+echo $descPro; 
+
+
 
 $sql = "INSERT INTO product VALUES ('$_POST[id_pro]','$_POST[name_pro]','$_POST[image]'
 '$_POST[num]','$_POST[price]','$_POST[desc]')";

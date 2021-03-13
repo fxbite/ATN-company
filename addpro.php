@@ -15,7 +15,8 @@
     </style>    
 </head>
 <body>
-    <form action="insert_pro.php" method="POST" class="container-center">
+<div class= container-center>
+    <form action="insert_pro.php" method="POST">
         <fieldset>
          <legend>Input info products</legend>   
          <label>Id Product:</label><br>
@@ -34,5 +35,6 @@
          <input type="submit" value="Add info">
         </fieldset>
     </form> 
+</div>
 </body>
 </html>
