@@ -1,94 +1,163 @@
+<?php
+    session_start();
+    require_once 'connect.php';
+	$conn = connectdb();
+
+    if (isset($_POST['add'])){
+        if (isset($_SESSION['cart'])){
+            $item_array_id = array_column($_SESSION['cart'],'product_id');
+            if (!in_array($_GET["id"],$item_array_id)){
+                $count = count($_SESSION["cart"]);
+                $item_array = array(
+                    'product_id' => $_GET["id"],
+                    'item_name' => $_POST["hidden_name"],
+                    'product_price' => $_POST["hidden_price"],
+                    'item_quantity' => $_POST["quantity"],
+                );
+                $_SESSION["cart"][$count] = $item_array;
+                echo '<script>window.location="products.php"</script>';
+            }else{
+                echo '<script>alert("Product is already Added to Cart")</script>';
+                echo '<script>window.location="products.php"</script>';
+            }
+        }else{
+            $item_array = array(
+                'product_id' => $_GET["id"],
+                'item_name' => $_POST["hidden_name"],
+                'product_price' => $_POST["hidden_price"],
+                'item_quantity' => $_POST["quantity"],
+            );
+            $_SESSION["cart"][0] = $item_array;
+        }
+    }
+
+    if (isset($_GET["action"])){
+        if ($_GET["action"] == "delete"){
+            foreach ($_SESSION["cart"] as $keys => $value){
+                if ($value["product_id"] == $_GET["id"]){
+                    unset($_SESSION["cart"][$keys]);
+                    echo '<script>alert("Product has been Removed...!")</script>';
+                    echo '<script>window.location="products.php"</script>';
+                }
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<title>Our products</title>
+		<style>
+        @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+        *{
+            font-family: 'Titillium Web', sans-serif;
+        }
+        .product{
+            border: 1px solid #eaeaec;
+            margin: -1px 19px 3px -1px;
+            padding: 10px;
+            text-align: center;
+            background-color: #efefef;
+        }
+        table, th, tr{
+            text-align: center;
+        }
+        .title2{
+            text-align: center;
+            color: #66afe9;
+            background-color: #efefef;
+            padding: 2%;
+        }
+        h2{
+            text-align: center;
+            color: #66afe9;
+            background-color: #efefef;
+            padding: 2%;
+        }
+        table th{
+            background-color: #efefef;
+        }
+    </style>
 	</head>
 	<body>
-		<div class="container" style="width: 700px;">
-			<h3 align="center">Shopping Cart</a></h3><br>
-			
-            <!-- Show products -->
-			<?php
-			    require_once 'connect.php';
-				$conn = connectdb();
-				$query = "SELECT * FROM product ORDER BY idPro ASC";
-				$result = pg_query($conn, $query);
-				if(pg_num_rows($result) > 0)
-				{
-					while($row = pg_fetch_array($result))
-					{
-			?>
-			<div class="col-md-4">
-				<form method="post" action="products.php?action=add&id=<?php echo $row["idPro"]; ?>">
-					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
-						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
+	<div class="container" style="width: 65%">
+        <h2>Shopping Cart</h2>
+        <?php
+            $query = "SELECT * FROM product ORDER BY idPro ASC ";
+            $result = pg_query($conn,$query);
+            if(pg_num_rows($result) > 0) {
 
-						<h4 class="text-info"><?php echo $row["namePro"]; ?></h4>
+                while ($row = pg_fetch_array($result)) {
 
-						<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
+                    ?>
+                    <div class="col-md-3">
 
-						<input type="text" name="quantity" value="1" class="form-control" />
+                        <form method="POST" action="products.php?action=add&id=<?php echo $row['idPro']; ?>">
 
-						<input type="hidden" name="hidden_name" value="<?php echo $row["namePro"]; ?>" />
+                            <div class="product">
+                                <img src="<?php echo $row['image']; ?>" class="img-responsive">
+                                <h5 class="text-info"><?php echo $row['namePro']; ?></h5>
+                                <h5 class="text-danger"><?php echo $row['price']; ?></h5>
+                                <input type="text" name="quantity" class="form-control" value="1">
+                                <input type="hidden" name="hidden_name" value="<?php echo $row['namePro']; ?>">
+                                <input type="hidden" name="hidden_price" value="<?php echo $row['price']; ?>">
+                                <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success"
+                                       value="Add to Cart">
+                            </div>
+                        </form>
+                    </div>
+                    <?php
+                }
+            }
+        ?>
 
-						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+        <div style="clear: both"></div>
+        <h3 class="title2">Shopping Cart Details</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            <tr>
+                <th width="30%">Product Name</th>
+                <th width="10%">Quantity</th>
+                <th width="13%">Price Details</th>
+                <th width="10%">Total Price</th>
+                <th width="17%">Remove Item</th>
+            </tr>
 
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+            <?php
+                if(!empty($_SESSION['cart'])){
+                    $total = 0;
+                    foreach ($_SESSION['cart'] as $key => $value) {
+                        ?>
+                        <tr>
+                            <td><?php echo $value['item_name']; ?></td>
+                            <td><?php echo $value['item_quantity']; ?></td>
+                            <td>$ <?php echo $value['product_price']; ?></td>
+                            <td>
+                                $ <?php echo number_format($value['item_quantity'] * $value['product_price'], 2); ?></td>
+                            <td><a href="Cart.php?action=delete&id=<?php echo $value['product_id']; ?>"><span
+                                        class="text-danger">Remove Item</span></a></td>
 
-					</div>
-				</form>
-			</div>
-			<?php
-					}
-				}
-			?>
-			<div style="clear:both"></div>
-			<br />
-			<h3>Order Details</h3>
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<tr>
-						<th width="40%">Item Name</th>
-						<th width="10%">Quantity</th>
-						<th width="20%">Price</th>
-						<th width="15%">Total</th>
-						<th width="5%">Action</th>
-					</tr>
-					<?php
-					if(!empty($_SESSION["shopping_cart"]))
-					{
-						$total = 0;
-						foreach($_SESSION["shopping_cart"] as $keys => $values)
-						{
-					?>
-					<tr>
-						<td><?php echo $values["item_name"]; ?></td>
-						<td><?php echo $values["item_quantity"]; ?></td>
-						<td>$ <?php echo $values["item_price"]; ?></td>
-						<td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
-						<td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
-					</tr>
-					<?php
-							$total = $total + ($values["item_quantity"] * $values["item_price"]);
-						}
-					?>
-					<tr>
-						<td colspan="3" align="right">Total</td>
-						<td align="right">$ <?php echo number_format($total, 2); ?></td>
-						<td></td>
-					</tr>
-					<?php
-					}
-					?>
-						
-				</table>
-			</div>
-		</div>
-	</div>
-	<br />
+                        </tr>
+                        <?php
+                        $total = $total + ($value['item_quantity'] * $value['product_price']);
+                    }
+                        ?>
+                        <tr>
+                            <td colspan="3" align="right">Total</td>
+                            <th align="right">$ <?php echo number_format($total, 2); ?></th>
+                            <td></td>
+                        </tr>
+                        <?php
+                    }
+                ?>
+            </table>
+        </div>
+
+    </div>
+
 	</body>
 </html>
 
