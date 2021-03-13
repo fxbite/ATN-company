@@ -14,8 +14,6 @@
 </head>
 <body>
     <form action="insert_pro.php" method="POST" class="container-center">
-        
-         <legend>Input info products</legend>
          <label>Id Product:</label><br>
          <input type="text" name="id_pro"><br><br>
          <label>Name Product:</label><br>
