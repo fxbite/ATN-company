@@ -29,7 +29,7 @@
          <label>Price:</label><br>
          <input type="text" name="price"><br><br>
          <label>Description:</label><br>
-         <textarea type="text" name="num" placeholder="Descript here..." rows="4" cols="50">   
+         <textarea type="text" name="desc" placeholder="Descript here..." rows="4" cols="50">   
          </textarea><br><br>
          <input type="submit" value="Add info">
         </fieldset>
