@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add products form</title>
     <style>
-      .container {
+      .container-center {
         text-align: center;
       }
 
     </style>    
 </head>
 <body>
-<div class="container">
-    <form action="insert_pro.php" method="POST">
+    <form action="insert_pro.php" method="POST" class="container-center">
         <fieldset>
          <legend>Input info products</legend>
          <label>Id Product:</label><br>
@@ -33,6 +32,5 @@
          <input type="submit" value="Add info">
         </fieldset>
     </form> 
-</div>    
 </body>
 </html>
