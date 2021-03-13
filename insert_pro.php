@@ -42,7 +42,7 @@ echo $descPro;
 
 
 
-$sql = "INSERT INTO product () VALUES ('$idPro','$namePro','$imagePro'
+$sql = "INSERT INTO product VALUES ('$idPro','$namePro','$imagePro'
 '$numPro','$pricePro','$descPro')";
 
 echo $sql;
