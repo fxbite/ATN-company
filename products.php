@@ -1,6 +1,9 @@
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "testing");
+
+// Connect database
+require_once "connect.php";
+$conn = connectdb();
 
 if(isset($_POST["add_to_cart"]))
 {
@@ -61,34 +64,31 @@ if(isset($_GET["action"]))
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	<?php include 'nav.php'?>
 		<br />
-		<div class="container">
-			<br />
-			<br />
-			<br />
-			<h3 align="center">Tutorial - <a href="http://www.webslesson.info/2016/08/simple-php-mysql-shopping-cart.html" title="Simple PHP Mysql Shopping Cart">Simple PHP Mysql Shopping Cart</a></h3><br />
-			<br /><br />
+		<div class="container" style="width: 700px;">
+			<h3 align="center">Shopping Cart</a></h3><br>
+			
+            <!-- Show products -->
 			<?php
-				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
-				$result = mysqli_query($connect, $query);
-				if(mysqli_num_rows($result) > 0)
+				$query = "SELECT * FROM product ORDER BY idPro ASC";
+				$result = pg_query($conn, $query);
+				if(pg_num_rows($result) > 0)
 				{
-					while($row = mysqli_fetch_array($result))
+					while($row = pg_fetch_array($result))
 					{
 				?>
 			<div class="col-md-4">
-				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+				<form method="post" action="products.php?action=add&id=<?php echo $row["idPro"]; ?>">
 					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
 						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
 
-						<h4 class="text-info"><?php echo $row["name"]; ?></h4>
+						<h4 class="text-info"><?php echo $row["namePro"]; ?></h4>
 
 						<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
 
 						<input type="text" name="quantity" value="1" class="form-control" />
 
-						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+						<input type="hidden" name="hidden_name" value="<?php echo $row["namePro"]; ?>" />
 
 						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 

@@ -8,19 +8,23 @@
 </head>
 <body>
     <form action="insert_pro.php" method="POST">
-        <label>Id Product:</label><br>
-        <input type="text" name="id_pro"><br>
-        <label>Name Product:</label><br>
-        <input type="text" name="name_pro"><br>
-        <label>Image:</label><br>
-        <input type="file" name="image"><br>
-        <label>Number:</label><br>
-        <input type="number" name="num"><br><br>
-        <label>Price:</label><br>
-        <input type="text" name="price"><br><br>
-        <label>Description:</label><br>
-        <textarea type="text" name="num" placeholder="Descript here..."></textarea><br><br>
-        <input type="submit" value="Add info">
+        <fieldset>
+         <legend>Input info products</legend>
+         <label>Id Product:</label><br>
+         <input type="text" name="id_pro"><br><br>
+         <label>Name Product:</label><br>
+         <input type="text" name="name_pro"><br><br>
+         <label>Image:</label><br>
+         <input type="file" name="image"><br><br>
+         <label>Number:</label><br>
+         <input type="number" name="num"><br><br>
+         <label>Price:</label><br>
+         <input type="text" name="price"><br><br>
+         <label>Description:</label><br>
+         <textarea type="text" name="num" placeholder="Descript here..." rows="4" cols="50">   
+         </textarea><br><br>
+         <input type="submit" value="Add info">
+        </fieldset>
     </form> 
     
 </body>
