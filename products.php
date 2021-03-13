@@ -61,6 +61,7 @@ if(isset($_GET["action"]))
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</head>
 	<body>
+	<?php include 'nav.php'?>
 		<br />
 		<div class="container">
 			<br />
