@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add products form</title>
+    <style>
+      .container {
+        text-align: center;
+      }
+
+    </style>    
 </head>
 <body>
+<div class="container">
     <form action="insert_pro.php" method="POST">
         <fieldset>
          <legend>Input info products</legend>
@@ -26,6 +33,6 @@
          <input type="submit" value="Add info">
         </fieldset>
     </form> 
-    
+</div>    
 </body>
 </html>
