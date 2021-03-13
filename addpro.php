@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class= container-center>
-    <form action="insert_pro.php" method="POST">
+    <form action="insert_pro.php" method="POST" enctype="multipart/form-data">
         <fieldset>
          <legend>Input info products</legend>   
          <label>Id Product:</label><br>

@@ -6,7 +6,7 @@ $conn = connectdb();
 // get data from Form
 $idPro = $_POST['id_pro'];
 $namePro = $_POST['name_pro'];
-$imagePro = $_FILES["image"]["name"];
+$imagePro = $_FILES['image']['name'];
 $numPro = $_POST['num'];
 $pricePro = $_POST['price'];
 $descPro = $_POST['desc'];
@@ -14,11 +14,12 @@ $descPro = $_POST['desc'];
 //Get Image
 if(isset($_FILES))
 {
-    $target_dir = "assets/img/data";
-    $target_file = $target_dir.basename($_FILES["image"]["name"]);
+    $target_dir = 'assets/img/data';
+    $target_file = $target_dir.basename($_FILES['name_pro']['name']);
     
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
       $check = getimagesize($_FILES["image"]["tmp_name"]);
@@ -41,8 +42,10 @@ echo $descPro;
 
 
 
-$sql = "INSERT INTO product VALUES ('$_POST[id_pro]','$_POST[name_pro]','$_POST[image]'
-'$_POST[num]','$_POST[price]','$_POST[desc]')";
+$sql = "INSERT INTO product () VALUES ('$idPro','$namePro','$imagePro'
+'$numPro','$pricePro','$descPro')";
+
+echo $sql;
 
 if (pg_query($conn,$sql)){
     echo "Records added successfully.";
