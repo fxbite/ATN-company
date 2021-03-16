@@ -14,7 +14,7 @@
             $sql = "select * from product where 'idPro'='1'";
             
             $products= pg_query($conn, $sql);
-            
+            echo $products;
             $i= 9;
             $count = 0;
             while ($count < $i && $row = pg_fetch_assoc($products)) {  
