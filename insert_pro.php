@@ -15,7 +15,7 @@ $descPro = $_POST['desc'];
 if(isset($_FILES))
 {
     $target_dir = 'assets/img/data/';
-    $target_file = $target_dir.basename($_FILES['name_pro']['name']);
+    $target_file = $target_dir.basename($_FILES['image']['name']);
     
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
