@@ -20,7 +20,7 @@
             while ($count < $i && $row = pg_fetch_assoc($products)) {  
             $count++;
 			?>
-			<img src="assets/img/data/<?php echo $row["image"]; ?>" class="img-responsive">	
+			<img src="assets/img/data/<?php echo $row['image']; ?>" class="img-responsive">	
 			<?php }	?>
 </body>
 </html>
