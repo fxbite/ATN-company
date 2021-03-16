@@ -44,7 +44,7 @@ if(isset($_GET["action"]))
 			{
 				unset($_SESSION["shopping_cart"][$keys]);
 				echo '<script>alert("Item Removed")</script>';
-				echo '<script>window.location="index.php"</script>';
+				echo '<script>window.location="products.php"</script>';
 			}
 		}
 	}
