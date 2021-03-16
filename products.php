@@ -55,7 +55,7 @@
                 <form method="post" action="products.php?action=add&id=<?php echo $row["idPro"]; ?>">
 
                     <div class="product">
-                        <img src="<?php echo $row["image"]; ?>" class="img-responsive">
+                        <img src="assets/img/data/<?php echo $row["image"]; ?>" class="img-responsive">
                         <h5 class="text-info"><?php echo $row["namePro"]; ?></h5>
                         <h5 class="text-danger"><?php echo $row["price"]; ?></h5>
                         <input type="text" name="quantity" class="form-control" value="1">
