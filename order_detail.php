@@ -11,7 +11,7 @@
 	<?php
 		    require_once 'connect.php';
 			$conn=connectDB();
-            $sql = "select * from product where "idPro"='1'";
+            $sql = "select * from product where 'idPro'='1'";
             
             $products= pg_query($conn, $sql);
             echo $products;
