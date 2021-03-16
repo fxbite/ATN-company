@@ -17,7 +17,7 @@
             echo $products;
             $i= 9;
             $count = 0;
-            while ($count < $i && $row = pg_fetch_assoc($products)) {  
+            while ($count < $i && $row = pg_fetch_row($products)) {  
             $count++;
 			?>
 			<img src="assets/img/data/<?php echo $row['image']; ?>" class="img-responsive">	
