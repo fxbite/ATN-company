@@ -10,8 +10,8 @@
 	<h3>Order Details</h3>
 	<?php
 		    require_once 'connect.php';
-			$conn=connectDB();
-            $sql = "select * from product";
+			$conn=connectdb();
+            $sql = "select * from product where \"idPro\"='1'";
             
             $products= pg_query($conn, $sql);
             echo $products;
