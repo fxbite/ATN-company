@@ -11,14 +11,14 @@
 	<?php
 		    require_once 'connect.php';
 			$conn=connectDB();
-            $sql = "select * from product where 'idPro'='1'";
+            $sql = "select * from product";
             
             $products= pg_query($conn, $sql);
             echo $products;
             $i= 9;
             $count = 0;
-            while ($row = pg_fetch_row($products) < 9) {  
-   
+            while ($count < $i && $row = pg_fetch_assoc($products)) {  
+            $count++;
 			?>
 			<img src="assets/img/data/<?php echo $row['image']; ?>" class="img-responsive">	
 			<?php }	?>
