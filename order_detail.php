@@ -14,6 +14,7 @@
             $sql = "select * from product";
 
             $products= pg_query($conn, $sql);
+            echo $products;
             $i= 9;
             $count = 0;
             while ($count < $i && $row = pg_fetch_array($products)) { 
