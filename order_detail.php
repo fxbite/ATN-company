@@ -14,10 +14,11 @@
             $sql = "select * from product where 'idPro'='1'";
             
             $products= pg_query($conn, $sql);
-            echo $products;
+            
             $i= 9;
             $count = 0;
             while ($count < $i && $row = pg_fetch_array($products)) { 
+            echo $row;    
             $count++;
 			?>
 			<img src="assets/img/data/<?php echo $row["image"]; ?>" class="img-responsive">	
