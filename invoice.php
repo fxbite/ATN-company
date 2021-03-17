@@ -11,6 +11,7 @@ $query = "select * from customer where \"phone\"= '$phone_num'";
 $info = pg_query($con, $query);
 $row = pg_fetch_array($info);
 
+echo $info;
 echo $row;
 
 
