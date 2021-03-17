@@ -89,6 +89,10 @@ if(isset($_GET["action"]))
         table th{
             background-color: #efefef;
         }
+
+		.form-input {
+			text-align: center;
+		}
     </style>
 	</head>
 	<body>
@@ -165,6 +169,15 @@ if(isset($_GET["action"]))
 			</div>
 		</div>
 	</div>
-	<br />
+	<br/>
+    <div class="form-input">
+	   <form action="insert_buy.php" method="POST">
+	     <label>Full Name:</label><br>
+         <input type="text" name="name_cust" id="name"><br><br>
+         <label>Phone Number:</label><br>
+         <input type="text" name="phone_cust" id="phone"><br><br>
+		 <input type="submit" value="Add info">
+	   </form>
+	</div>
 	</body>
 </html>
