@@ -169,14 +169,10 @@ if(isset($_GET["action"]))
 					<?php
 					}
 					?>
-						
+				<hr style="height:1px; background-color:#66afe9;">		
 				</table>
 				<h3>Save invoice</h3>
 		        <table>
-			      <tr>
-			        <td>Full Name:</td>
-			        <td><input type="text" name="name_cust" id="name"></td>
-			      </tr>
 			      <tr>
 			        <td>Phone Number:</td>
 			        <td><input type="text" name="phone_cust" id="phone"></td>
