@@ -134,7 +134,6 @@ if(isset($_GET["action"]))
 			<br />
 			<h3>Order Details</h3>
 			<div class="table-responsive">
-			<form action="invoice.php" method="POST">
 				<table class="table table-bordered">
 					<tr>
 						<th width="40%">Item Name</th>
@@ -169,8 +168,9 @@ if(isset($_GET["action"]))
 					<?php
 					}
 					?>
-				<hr style="height:1px; background-color:#66afe9;">		
 				</table>
+				<hr style="height:1px; background-color:#66afe9;">		
+                <form action="invoice.php" method="POST">
 				<h3>Save invoice</h3>
 		        <table>
 			      <tr>
@@ -179,7 +179,7 @@ if(isset($_GET["action"]))
 			      </tr>	 
 		        </table><br>
 		        <input type="submit" name="submit" value="Save info"><br><br>
-            </form>
+				</form>
 			</div>
 		</div>
 	</div>
