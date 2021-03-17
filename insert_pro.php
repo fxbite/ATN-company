@@ -32,7 +32,7 @@ if(isset($_FILES))
     }
 }
 
-$sql = "INSERT INTO product (name_pro, image_pro, number_pro, descrip) VALUES ('$namePro','$imagePro',
+$sql = "INSERT INTO product (name_pro, image_pro, number_pro, price, descrip) VALUES ('$namePro','$imagePro',
 '$numPro','$pricePro','$descPro')";
 
 if (pg_query($conn,$sql)){
