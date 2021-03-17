@@ -4,7 +4,6 @@ require_once "connect.php";
 $conn = connectdb();
 
 // get data from Form
-$idPro = $_POST['id_pro'];
 $namePro = $_POST['name_pro'];
 $imagePro = $_FILES['image']['name'];
 $numPro = $_POST['num'];
@@ -33,7 +32,7 @@ if(isset($_FILES))
     }
 }
 
-$sql = "INSERT INTO product (namePro, image, number, descrip) VALUES ('$namePro','$imagePro',
+$sql = "INSERT INTO product (name_pro, image, number, descrip) VALUES ('$namePro','$imagePro',
 '$numPro','$pricePro','$descPro')";
 
 if (pg_query($conn,$sql)){
