@@ -93,6 +93,10 @@ if(isset($_GET["action"]))
 		.form-input {
 			text-align: center;
 		}
+
+		.table-input {
+			text-align: left;
+		}
     </style>
 	</head>
 	<body>
@@ -173,9 +177,17 @@ if(isset($_GET["action"]))
     <div class="form-input">
 	   <form action="insert_buy.php" method="POST">
 	     <h3>Save invoice</h3>
-         Full Name: <input type="text" name="name_cust" id="name"><br><br>
-         Phone Number: <input type="text" name="phone_cust" id="phone"><br><br>
-		 <input type="submit" value="Add info">
+		 <table class="table-input">
+			<tr>
+			  <td>Full Name:</td>
+			  <td><input type="text" name="name_cust" id="name"></td>
+			</tr>
+			<tr>
+			  <td>Phone Number:</td>
+			  <td><input type="text" name="phone_cust" id="phone"></td>
+			</tr>	 
+		 </table>
+		 <input type="submit" value="Add info"><br><br>
 	   </form>
 	</div>
 	</body>
