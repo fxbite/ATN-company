@@ -172,10 +172,9 @@ if(isset($_GET["action"]))
 	<br/>
     <div class="form-input">
 	   <form action="insert_buy.php" method="POST">
-	     <label>Full Name:</label><br>
-         <input type="text" name="name_cust" id="name"><br><br>
-         <label>Phone Number:</label><br>
-         <input type="text" name="phone_cust" id="phone"><br><br>
+	     <h3>Save invoice</h3>
+         Full Name: <input type="text" name="name_cust" id="name"><br><br>
+         Phone Number: <input type="text" name="phone_cust" id="phone"><br><br>
 		 <input type="submit" value="Add info">
 	   </form>
 	</div>
