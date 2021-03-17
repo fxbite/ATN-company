@@ -186,7 +186,7 @@ if(isset($_GET["action"]))
 			  <td>Phone Number:</td>
 			  <td><input type="text" name="phone_cust" id="phone"></td>
 			</tr>	 
-		 </table>
+		 </table><br>
 		 <input type="submit" value="Add info"><br><br>
 	   </form>
 	</div>
