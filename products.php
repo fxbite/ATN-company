@@ -177,7 +177,7 @@ if(isset($_GET["action"]))
     <div class="form-input">
 	   <form action="insert_buy.php" method="POST">
 	     <h3>Save invoice</h3>
-		 <table class="table-input">
+		 <table>
 			<tr>
 			  <td>Full Name:</td>
 			  <td><input type="text" name="name_cust" id="name"></td>
