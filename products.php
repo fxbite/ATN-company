@@ -174,7 +174,7 @@ if(isset($_GET["action"]))
 		</div>
 	</div>
 	<br/>
-	<hr style="height: 2px; width: 100%">
+	<hr style="height: 5px; width: 100%; background-color:black">
     <div class="form-input">
 	   <form action="insert_buy.php" method="POST">
 	     <h3>Save invoice</h3>
