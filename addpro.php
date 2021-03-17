@@ -19,8 +19,6 @@
     <form action="insert_pro.php" method="POST" enctype="multipart/form-data">
         <fieldset>
          <legend>Input info products</legend>   
-         <label>Id Product:</label><br>
-         <input type="text" name="id_pro"><br><br>
          <label>Name Product:</label><br>
          <input type="text" name="name_pro"><br><br>
          <label>Image:</label><br>

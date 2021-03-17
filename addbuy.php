@@ -19,8 +19,6 @@
     <form action="insert_buy.php" method="POST">
         <fieldset> 
          <legend>Input info customers</legend> 
-         <label>Id Custommer:</label><br>
-         <input type="text" name="id_cust" id="id_cust"><br><br>
          <label>Full Name:</label><br>
          <input type="text" name="name" id="name"><br><br>
          <label>Phone Number:</label><br>

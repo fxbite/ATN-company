@@ -4,14 +4,12 @@ require_once "connect.php";
     $conn = connectdb();
 
      // get data from FORM
-    $idBuy = $_POST['id_cust'];
     $nameBuy = $_POST['name'];
     $phoneBuy = $_POST['phone'];
     $emailBuy = $_POST['email'];
 
     // insert to databse
-    $sql = "INSERT INTO customer VALUES ('$idBuy',' $nameBuy',
-    ' $phoneBuy','$emailBuy')";
+    $sql = "INSERT INTO customer (nameCust, phone, email) VALUES ('$nameBuy','$phoneBuy','$emailBuy')";
 
     // $sql = "INSERT INTO customer VALUES ('$_POST[id_cust]','$_POST[name]',
     // '$_POST[phone]','$_POST[email]')";
