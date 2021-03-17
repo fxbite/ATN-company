@@ -172,7 +172,7 @@ if(isset($_GET["action"]))
 						
 				</table>
 				<h3>Save invoice</h3>
-		        <table style="margin: 0 auto; justify-content:center">
+		        <table>
 			      <tr>
 			        <td>Full Name:</td>
 			        <td><input type="text" name="name_cust" id="name"></td>
@@ -190,3 +190,4 @@ if(isset($_GET["action"]))
 	<br/>
 	</body>
 </html>
+<!-- style="margin: 0 auto; justify-content:center" -->
