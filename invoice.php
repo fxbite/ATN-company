@@ -5,13 +5,14 @@ require_once 'connect.php';
 $con = connectdb();
 
 // Get data products.php
+$name_cust = $_POST['name_cust'];
 $phone_num = $_POST['phone_cust'];
 $total_pro = $_SESSION["total"];
 $name_item = $_SESSION["item_name"];
 
 
 // Search vs Get ID customer
-$query = "select * from customer where \"phone\"= '$phone_num'";
+$query = "select * from customer where \"phone\"= '$phone_num' or \"namme_cust\"= '$name_cust'";
 $info = pg_query($con, $query);
 $row = pg_fetch_array($info);
 $id_cust = $row['idCust'];

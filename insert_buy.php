@@ -6,7 +6,7 @@ require_once "connect.php";
      // get data from FORM
     $nameBuy = $_POST['name'];
     $phoneBuy = $_POST['phone'];
-    $emailBuy = $_POST['email'];
+    $emailBuy = strtolower($_POST['email']);
 
     // insert to databse
     $sql = "INSERT INTO customer (name_cust, phone, email) VALUES ('$nameBuy','$phoneBuy','$emailBuy')";
