@@ -20,8 +20,9 @@ $id_cust = $row['idCust'];
 
 // Search vs Get ID products
 $sql_query = "INSERT INTO product where \"name_pro\"= '$name_item'";
-echo $sql_query;
-// $info1 = pg_query($con, $sql_query);
+$info1 = pg_query($con, $sql_query);
+echo $info1;
+
 // $row1 = pg_fetch_array($info1);
 
 // $id_pro = $row1['idPro'];
