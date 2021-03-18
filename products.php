@@ -185,12 +185,7 @@ if(isset($_GET["action"]))
 		        </table><br>
 		        <input type="submit" name="submit" value="Save info"><br><br>
 				</form>
-				<?php 
-				if(isset($_POST['submit'])){
-					$_POST["item_name"] = $_SESSION["item_name"];
-					$_POST["total"] = $_SESSION["total"];
-				}
-				?>
+				
 			</div>
 		</div>
 	</div>

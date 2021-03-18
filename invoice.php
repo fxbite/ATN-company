@@ -6,8 +6,8 @@ $con = connectdb();
 
 // Get data from save invoice form
 $phone_num = $_POST['phone_cust'];
-$total_pro = $_POST["total"];
-$name_item = $_POST["item_name"];
+$total_pro = $_SESSION["total"];
+$name_item = $_SESSION["item_name"];
 echo $total_pro;
 echo $name_item;
 
