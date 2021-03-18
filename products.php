@@ -171,19 +171,17 @@ if(isset($_GET["action"]))
 					}
 					?>
 				</table>
-				<?php 
-				
-?>
+
 				<hr style="height:1px; background-color:#66afe9;">		
                 <form action="invoice.php" method="POST">
 				<h3>Save invoice</h3>
 		        <table>
 				 <tr>
-			        <td>Full Name:</td>
+			        <td>Full Name: </td>
 			        <td><input type="text" name="name_cust" id="name_cust"></td>
 			      </tr>	 
 			      <tr>
-			        <td>Phone Number:</td>
+			        <td>Phone Number: </td>
 			        <td><input type="text" name="phone_cust" id="phone"></td>
 			      </tr>	 
 		        </table><br>
