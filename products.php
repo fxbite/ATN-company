@@ -180,7 +180,7 @@ if(isset($_GET["action"]))
 		        <table>
 				 <tr>
 			        <td>Full Name:</td>
-			        <td><input type="text" name="name_cust" id="phone"></td>
+			        <td><input type="text" name="name_cust" id="name_cust"></td>
 			      </tr>	 
 			      <tr>
 			        <td>Phone Number:</td>
