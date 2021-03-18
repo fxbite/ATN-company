@@ -1,16 +1,16 @@
-<?php 
+<?php
+session_start();
 require_once 'connect.php';
 
 $con = connectdb();
 
 // Get data from save invoice form
 $phone_num = $_POST['phone_cust'];
-
-$total_pro = $total;
-$name_item = $values["item_name"];
-
+$total_pro = $_POST["total"];
+$name_item = $_POST["item_name"];
 echo $total_pro;
 echo $name_item;
+
 
 // Search ID customer
 $query = "select * from customer where \"phone\"= '$phone_num'";

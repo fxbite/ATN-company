@@ -158,6 +158,8 @@ if(isset($_GET["action"]))
 					</tr>
 					<?php
 							$total = $total + ($values["item_quantity"] * $values["item_price"]);
+						$_SESSION["item_name"] = $values["item_name"];
+						$_SESSION["total"] = $total;
 						}
 					?>
 					<tr>
@@ -170,11 +172,7 @@ if(isset($_GET["action"]))
 					?>
 				</table>
 				<?php 
-				$total_pro = $total;
-$name_item = $values["item_name"];
-
-echo $total_pro;
-echo $name_item;
+				
 ?>
 				<hr style="height:1px; background-color:#66afe9;">		
                 <form action="invoice.php" method="POST">
@@ -187,6 +185,12 @@ echo $name_item;
 		        </table><br>
 		        <input type="submit" name="submit" value="Save info"><br><br>
 				</form>
+				<?php 
+				if(isset($_POST['submit'])){
+					$_SESSION["item_name"] = $_POST["item_name"];
+					$_SESSION["total"] = $_POST["total"];
+				}
+				?>
 			</div>
 		</div>
 	</div>
