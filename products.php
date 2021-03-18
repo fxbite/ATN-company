@@ -73,7 +73,7 @@ if(isset($_GET["action"]))
         }
         table, th, tr, td{
             text-align: center;
-			font-size: 36px;
+			font-size: 20px;
         }
         .title2{
             text-align: center;
