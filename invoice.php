@@ -10,13 +10,12 @@ $phone_num = $_POST['phone_cust'];
 $total_pro = $_SESSION["total"];
 $name_item = $_SESSION["item_name"];
 
-echo $name_cust;
-// // Search vs Get ID customer
-// $query = "select * from customer where \"phone\"= '$phone_num' or \"namme_cust\"= '$name_cust'";
-// $info = pg_query($con, $query);
-// $row = pg_fetch_array($info);
-// $id_cust = $row['idCust'];
-
+// Search vs Get ID customer
+$query = "select * from customer where \"phone\"= '$phone_num' or \"namme_cust\"= '$name_cust'";
+$info = pg_query($con, $query);
+$row = pg_fetch_array($info);
+$id_cust = $row['idCust'];
+echo $id_cust;
 
 // // Search vs Get ID products
 // $sql_query = "select * from product where \"name_pro\"= '$name_item'";
