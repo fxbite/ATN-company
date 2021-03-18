@@ -11,7 +11,7 @@ $total_pro = $_SESSION["total"];
 $name_item = $_SESSION["item_name"];
 
 // Search vs Get ID customer
-$query = "select * from customer where \"phone\"= '$phone_num' or \"namme_cust\"= '$name_cust'";
+$query = "select * from customer where \"phone\"= '$phone_num' or \"name_cust\"= '$name_cust'";
 $info = pg_query($con, $query);
 $row = pg_fetch_array($info);
 $id_cust = $row['idCust'];
