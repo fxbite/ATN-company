@@ -14,7 +14,6 @@ $name_item = $_SESSION["item_name"];
 $query = "select * from customer where \"phone\"= '$phone_num'";
 $info = pg_query($con, $query);
 $row = pg_fetch_array($info);
-
 $id_cust = $row['idCust'];
 
 
@@ -23,16 +22,14 @@ $sql_query = "select * from product where \"name_pro\"= '$name_item'";
 $info1 = pg_query($con, $sql_query);
 $row1 = pg_fetch_array($info1);
 $id_pro = $row1['idPro'];
-echo $id_pro;
 
 
+// Save invoice
+$insert_data = "INSERT INTO invoice (id_cust, id_pro, total) VALUES ('$id_cust','$id_pro','$total_pro')";
 
-// $insert_data = "INSERT INTO invoice (id_cust, id_pro, total) VALUES ('$id_cust',')";
-
-// if (pg_query($con,$insert_data)){
-//     echo "Saving successfully.";
-// } else {
-//     echo "Failed saving.";
-// }  
-
+if (pg_query($con,$insert_data)) {
+    echo "Saving successfully.";
+} else {
+    echo "Failed saving.";
+}  
 ?>
