@@ -169,6 +169,13 @@ if(isset($_GET["action"]))
 					}
 					?>
 				</table>
+				<?php 
+				$total_pro = $total;
+$name_item = $values["item_name"];
+
+echo $total_pro;
+echo $name_item;
+?>
 				<hr style="height:1px; background-color:#66afe9;">		
                 <form action="invoice.php" method="POST">
 				<h3>Save invoice</h3>
