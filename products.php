@@ -187,8 +187,8 @@ if(isset($_GET["action"]))
 				</form>
 				<?php 
 				if(isset($_POST['submit'])){
-					$_SESSION["item_name"] = $_POST["item_name"];
-					$_SESSION["total"] = $_POST["total"];
+					$_POST["item_name"] = $_SESSION["item_name"];
+					$_POST["total"] = $_SESSION["total"];
 				}
 				?>
 			</div>
