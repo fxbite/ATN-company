@@ -56,6 +56,7 @@ if(isset($_GET["action"]))
 <html>
 	<head>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 		<title>Our products</title>
 		<style>
         @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
@@ -70,8 +71,9 @@ if(isset($_GET["action"]))
             text-align: center;
             background-color: #efefef;
         }
-        table, th, tr{
+        table, th, tr, td{
             text-align: center;
+			font-size: 36px;
         }
         .title2{
             text-align: center;
