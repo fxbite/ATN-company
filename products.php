@@ -56,7 +56,7 @@ if(isset($_GET["action"]))
 <html>
 	<head>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 		<title>Our products</title>
 		<style>
         @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
@@ -102,6 +102,11 @@ if(isset($_GET["action"]))
 	<body>
 	<div class="container" style="width: 65%">
         <h2>Shopping Cart</h2>
+		<div class="content">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="products" style="margin-right: -318px;">
+                                <div class="row no-gutters">
            <?php
 		    require_once 'connect.php';
 			$conn=connectDB();
@@ -117,7 +122,7 @@ if(isset($_GET["action"]))
                 <form method="post" action="products.php?action=add&id=<?php echo $row["idPro"]; ?>">
 
                     <div class="product">
-                        <img src="assets/img/data/<?php echo $row["image_pro"]; ?>" class="img-responsive">
+                        <img src="assets/img/data/<?php echo $row["image_pro"]; ?>" class="img-responsive img-fluid d-block">
                         <h5 class="text-info"><?php echo $row["name_pro"]; ?></h5>
                         <h5 class="text-danger">$ <?php echo $row["price"]; ?></h5>
                         <input type="text" name="quantity" class="form-control" value="1">
@@ -129,7 +134,11 @@ if(isset($_GET["action"]))
                 </form>
             </div>
 			<?php } ?>
-
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
             <div style="clear:both"></div>
 			<br />
 			<h3>Order Details</h3>
@@ -192,6 +201,7 @@ if(isset($_GET["action"]))
 		</div>
 	</div>
 	<br/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
 </html>
 <!-- style="margin: 0 auto; justify-content:center" -->
