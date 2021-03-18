@@ -14,9 +14,25 @@ $row = pg_fetch_array($info);
 // Get data from customer table
 $id_cust = $row['idCust'];
 
-echo $id_cust;
+// Get data from Order_detail Form
+$total_pro = $total;
+$name_item = $values["item_name"];
 
-// $insert_data = "INSERT INTO invoice (id_cust, id_pro, total) VALUES ('')";
+echo $total_pro;
+echo $name_item;
+
+// // Search ID products
+// $sql_query = "INSERT INTO product where \"name_pro\"= '$name_item'";
+// $info1 = pg_query($con, $sql_query);
+// $row1 = pg_fetch_array($info1);
+
+// // Get data from product table
+// $id_pro = $row1['idPro'];
+
+// echo $id_pro;
+
+
+// $insert_data = "INSERT INTO invoice (id_cust, id_pro, total) VALUES ('$id_cust',')";
 
 // if (pg_query($con,$insert_data)){
 //     echo "Saving successfully.";
