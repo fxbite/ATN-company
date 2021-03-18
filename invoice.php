@@ -6,6 +6,12 @@ $con = connectdb();
 // Get data from save invoice form
 $phone_num = $_POST['phone_cust'];
 
+$total_pro = $total;
+$name_item = $values["item_name"];
+
+echo $total_pro;
+echo $name_item;
+
 // Search ID customer
 $query = "select * from customer where \"phone\"= '$phone_num'";
 $info = pg_query($con, $query);
@@ -15,11 +21,7 @@ $row = pg_fetch_array($info);
 $id_cust = $row['idCust'];
 
 // Get data from Order_detail Form
-$total_pro = $total;
-$name_item = $values["item_name"];
 
-echo $total_pro;
-echo $name_item;
 
 // // Search ID products
 // $sql_query = "INSERT INTO product where \"name_pro\"= '$name_item'";
